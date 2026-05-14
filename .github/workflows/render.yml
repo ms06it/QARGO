@@ -1,0 +1,15 @@
+name: Ping FastAPI 
+
+on:
+  schedule:
+    - cron: "*/10 * * * *"
+  workflow_dispatch:
+  
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Ping FastAPI
+        run: |
+          echo "Pinging FASTAPI"
+          curl --silent https://q-fastapi.onrender.com/ || true
